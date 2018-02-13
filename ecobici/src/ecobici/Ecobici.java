@@ -66,14 +66,14 @@ public class Ecobici {
     static double durper; // duración de cada periodo
     static LogNormalDistribution lognormal;
     static double mLogNormal,sdLogNormal,mNormal,sdNormal;
-//    static String[] resultados;
-//    static String[] globales;
+    static String[] resultados;
+    static String[] globales;
     static int[][] bicicletas; //población de soluciones
     static int pob, iter;//número de soluciones, iteraciones
     static double[][] objetivo; //número a minimizar
     static double mutación,alfa,beta;//probabilidad de mutación, pesos para obj.
     static Cruzamiento c;
-//    static String[][] res; //de cada estación
+    static String[][] res; //de cada estación
     
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
@@ -81,7 +81,7 @@ public class Ecobici {
         BufferedReader br = null;
         try {
             br =new BufferedReader(new FileReader
-            ("C:\\Users\\lablogistica\\Desktop\\ecobici\\DatosEntrada.csv"));
+            ("C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\ecobici\\DatosEntrada.csv"));
             String line = br.readLine(); //primera línea es de títulos
             line = br.readLine(); //segunda línea ya tiene los valores
             String [] fields = line.split(",");
@@ -109,7 +109,7 @@ public class Ecobici {
            }
         }
         bicicletas=new int[pob][nEst];
-        String S="C:\\Users\\lablogistica\\Desktop\\ecobici\\PoblaciónFinal.csv";
+        String S="C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\ecobici\\PoblaciónFinal.csv";
         try {
                 br =new BufferedReader(new FileReader(S));
                 for (int j = 0; j < nEst; j++) {
@@ -147,8 +147,8 @@ public class Ecobici {
         esperando = new ArrayQueue[nEst];
         arribos=new double[nEst][periodos];
         
-        /*
-        String csv= "C:\\Users\\lablogistica\\Desktop\\ecobici\\Resultados.csv";
+        
+        String csv= "C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\ecobici\\Resultados.csv";
         FileWriter writer = null;
         resultados=new String[21];
         resultados[0]="Rep:";
@@ -173,7 +173,7 @@ public class Ecobici {
         resultados[19]="Fracc. promedio de tiempo con estaciones llenas:";
         resultados[20]="Fracc. promedio de tiempo con estaciones "
                    + "llenas o vac?ias:";
-        /*
+        
         res=new String[nEst][11];
         for (int m = 0; m < nEst; m++) {
             res[m][0]="Usuarios que tomaron bicicleta: ";
@@ -188,7 +188,7 @@ public class Ecobici {
             res[m][9]="Tiempo que estuvo llena: ";
             res[m][10]="Balance: ";
         }
-        */
+        
         for (int it = 0; it < iter; it++) {
             System.out.println("\n");
             System.out.println("Iteración: "+it);
@@ -225,7 +225,7 @@ public class Ecobici {
                     bicis=0;
                 try {
                  br =new BufferedReader(new FileReader
-                ("C:\\Users\\lablogistica\\Desktop\\ecobici\\estaciones.csv"));
+                ("C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\ecobici\\estaciones.csv"));
                  String line = br.readLine();
                  while (null!=line) {
                     String [] fields = line.split(",");
@@ -265,7 +265,7 @@ public class Ecobici {
                     System.out.println("Error en creación de estaciones.");
                 try {
                  br =new BufferedReader(new FileReader
-                ("C:\\Users\\lablogistica\\Desktop\\ecobici\\tasasArribos.csv"));
+                ("C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\ecobici\\tasasArribos.csv"));
                  String line = br.readLine();
                  j=0;
                   while (null!=line) {
@@ -580,98 +580,98 @@ public class Ecobici {
 
     //               System.out.println("\n");
                    su=sut+sud;
-        //           System.out.println("Usuarios servidos: "+(int)su);
-        //           resultados[?]+=","+su;
-        //           System.out.println("Usuarios que tomaron bicicleta: "+(int)sut);
-        //           resultados[2]+=","+sut;
-        //           System.out.println("Usuarios que esperaron tomar bicicleta: "
-        //                   +(int)suet);
-        //           resultados[3]+=","+suet;
-        //           System.out.println("Siguen esperando tomar: "+Espt);
-        //           resultados[4]+=","+Espt;
-    //               fuet=suet/sut;
-        //           System.out.println("Fracción de usuarios que esperaron tomar "
-        //                   + "bicicleta: "+fuet);
-        //           resultados[5]+=","+fuet;
-        //           System.out.println("Usuarios que dejaron bicicleta: "+(int)sud);
-        //           resultados[6]+=","+sud;
-        //           System.out.println("Usuarios que esperaron dejar bicicleta: "
-        //                   +(int)sued);
-        //           resultados[7]+=","+sued;
-        //           System.out.println("Siguen esperando dejar: "+Espd);
-        //           resultados[8]+=","+Espd;
-    //               fued=sued/sud;
-        //           System.out.println("Fracción de usuarios que esperaron dejar "
-        //                   + "bicicleta: "+fued);
-        //           resultados[9]+=","+fued;
-        //           System.out.println("Usuarios que esperaron ambas: "+(int)suetyd);
-        //           resultados[10]+=","+suetyd;
+                   System.out.println("Usuarios servidos: "+(int)su);
+                   resultados[1]+=","+su;
+                   System.out.println("Usuarios que tomaron bicicleta: "+(int)sut);
+                   resultados[2]+=","+sut;
+                   System.out.println("Usuarios que esperaron tomar bicicleta: "
+                           +(int)suet);
+                   resultados[3]+=","+suet;
+                   System.out.println("Siguen esperando tomar: "+Espt);
+                   resultados[4]+=","+Espt;
+                   fuet=suet/sut;
+                   System.out.println("Fracción de usuarios que esperaron tomar "
+                           + "bicicleta: "+fuet);
+                   resultados[5]+=","+fuet;
+                   System.out.println("Usuarios que dejaron bicicleta: "+(int)sud);
+                   resultados[6]+=","+sud;
+                   System.out.println("Usuarios que esperaron dejar bicicleta: "
+                           +(int)sued);
+                   resultados[7]+=","+sued;
+                   System.out.println("Siguen esperando dejar: "+Espd);
+                   resultados[8]+=","+Espd;
+                   fued=sued/sud;
+                   System.out.println("Fracción de usuarios que esperaron dejar "
+                           + "bicicleta: "+fued);
+                   resultados[9]+=","+fued;
+                   System.out.println("Usuarios que esperaron ambas: "+(int)suetyd);
+                   resultados[10]+=","+suetyd;
                    sue=suet+sued-suetyd;
-        //           System.out.println("Usuarios totales que esperaron: "+(int)sue);
-        //           resultados[11]+=","+sue;
+                   System.out.println("Usuarios totales que esperaron: "+(int)sue);
+                   resultados[11]+=","+sue;
                    fue=sue/sut;
-        //           System.out.println("Fracción de usuarios que esperaron: "+fue);
-        //           resultados[12]+=","+fue;
-    //               sune=sut-sue;
-        //           System.out.println("No esperaron: "+(int)sune);
-        //           resultados[13]+=","+sune;
-    //               fune=sune/sut;
-        //           System.out.println("Fracción de usuarios que no esperaron: "+fune);
-        //           resultados[14]+=","+fune;
-    //               tet=stet/sut;
-        //           System.out.println("Tiempo promedio de espera para tomar "
-        //                   + "bicicleta: "+tet+" minutos");
-        //           resultados[15]+=","+tet;
-    //               ted=sted/sud;
-        //           System.out.println("Tiempo promedio de espera para dejar "
-        //                   + "bicicleta: "+ted+" minutos");
-        //           resultados[16]+=","+ted;
+                   System.out.println("Fracción de usuarios que esperaron: "+fue);
+                   resultados[12]+=","+fue;
+                   sune=sut-sue;
+                   System.out.println("No esperaron: "+(int)sune);
+                   resultados[13]+=","+sune;
+                   fune=sune/sut;
+                   System.out.println("Fracción de usuarios que no esperaron: "+fune);
+                   resultados[14]+=","+fune;
+                   tet=stet/sut;
+                   System.out.println("Tiempo promedio de espera para tomar "
+                           + "bicicleta: "+tet+" minutos");
+                   resultados[15]+=","+tet;
+                   ted=sted/sud;
+                   System.out.println("Tiempo promedio de espera para dejar "
+                           + "bicicleta: "+ted+" minutos");
+                   resultados[16]+=","+ted;
                    ste=stet+sted;
                    te=ste/su;
-        //           System.out.println("Tiempo promedio de espera: "+te);
-        //           resultados[17]+=","+te;
-    //               qV=AV/(fin*nEst);
-        //           System.out.println("Fracción promedio de tiempo "
-        //                + "con estaciones vacías: "+qV);
-        //           resultados[18]+=","+qV;
-             //      qValt=AValt/(fin*nEst);
-                  // System.out.println("Promedio de vacías (alt): "+qValt);
-    //               qLl=ALl/(fin*nEst);
-        //           System.out.println("Fracción promedio de tiempo "
-        //                + "con estaciones llenas: "+qLl);
-        //           resultados[19]+=","+qLl;
+                   System.out.println("Tiempo promedio de espera: "+te);
+                   resultados[17]+=","+te;
+                   qV=AV/(fin*nEst);
+                   System.out.println("Fracción promedio de tiempo "
+                        + "con estaciones vacías: "+qV);
+                   resultados[18]+=","+qV;
+               //    qValt=AValt/(fin*nEst);
+                 //  System.out.println("Promedio de vacías (alt): "+qValt);
+                   qLl=ALl/(fin*nEst);
+                   System.out.println("Fracción promedio de tiempo "
+                        + "con estaciones llenas: "+qLl);
+                   resultados[19]+=","+qLl;
              //      qLlalt=ALlalt/(fin*nEst);
-                  // System.out.println("Promedio de llenas (alt): "+qLlalt+"\n");
-    //               qInef=qLl+qV;
-        //           System.out.println("Fracción promedio de tiempo con estaciones "
-        //                   + "llenas o vacías: "+qInef);
-        //           resultados[20]+=","+qInef;
+                //  System.out.println("Promedio de llenas (alt): "+qLlalt+"\n");
+                   qInef=qLl+qV;
+                   System.out.println("Fracción promedio de tiempo con estaciones "
+                           + "llenas o vacías: "+qInef);
+                   resultados[20]+=","+qInef;
 
-        //        System.out.println("\n");
-        //        System.out.println("Llegadas programadas: "+llegadas);
-        //        System.out.println("Creadas por default al último: "+último);
-        //        System.out.println("Efectivas: "+(llegadas-último));
-    //               SQV=SQV+qV;
-    //               SQV2=SQV2+(qV*qV);
-    //               SQLl=SQLl+qLl;
-    //               SQLl2=SQLl2+(qLl*qLl);
-    //               SInef=SInef+qInef;
-    //               SInef2=SInef2+(qInef*qInef);
-    //               SUT=SUT+fuet;
-    //               SUT2=SUT2+(fuet*fuet);
-    //               SUD=SUD+fued;
-    //               SUD2=SUD2+(fued*fued);
+                System.out.println("\n");
+                System.out.println("Llegadas programadas: "+llegadas);
+                System.out.println("Creadas por default al último: "+último);
+                System.out.println("Efectivas: "+(llegadas-último));
+                   SQV=SQV+qV;
+                   SQV2=SQV2+(qV*qV);
+                   SQLl=SQLl+qLl;
+                   SQLl2=SQLl2+(qLl*qLl);
+                   SInef=SInef+qInef;
+                   SInef2=SInef2+(qInef*qInef);
+                   SUT=SUT+fuet;
+                   SUT2=SUT2+(fuet*fuet);
+                   SUD=SUD+fued;
+                   SUD2=SUD2+(fued*fued);
                    SUE=SUE+fue; //suma de la fracción de usuarios que esperó
-    //               SUE2=SUE2+(fue*fue);
-    //               SUNE=SUNE+fune;
-    //               SUNE2=SUNE2+(fune*fune);
-    //               STET=STET+tet;
-    //               STET2=STET2+(tet*tet);
-    //               STED=STED+ted;
-    //               STED2=STED2+(ted*ted);
+                   SUE2=SUE2+(fue*fue);
+                   SUNE=SUNE+fune;
+                   SUNE2=SUNE2+(fune*fune);
+                   STET=STET+tet;
+                   STET2=STET2+(tet*tet);
+                  STED=STED+ted;
+                   STED2=STED2+(ted*ted);
                    STE=STE+te;
-    //               STE2=STE2+(te*te);
-                   /*
+                   STE2=STE2+(te*te);
+                   
                     for (int m = 0; m < n; m++) {
                         if(((Evento) calendario.dequeue()).tipo==1)
                             NumEsperando++;
@@ -684,9 +684,9 @@ public class Ecobici {
                         System.out.println("Se vació el calendario. Quedaron "+n
                             +" eventos: " +NumEsperando+" llegadas y "+NumEsperando2
                             +" arribos con bicicleta.");
-                    */
+                    
                }
-                /*
+                
                 try{
                     writer = new FileWriter(csv);
                         for (int m = 0; m < 21; m++)
@@ -734,12 +734,12 @@ public class Ecobici {
                         + "bicicleta: ";
                 System.out.println(globales[4]+sUED);
                 globales[4]+=","+sUED;
-                */
+                
                 FUE=SUE/reps;
     //            globales[5]=;
                 System.out.println("Fracc. promedio de usuarios que esperaron: "+FUE);
     //            globales[5]+=","+FUE;
-                /*
+                
                 sUE=SUE2/(reps-1)-(SUE*SUE)/(reps*(reps-1));
                 globales[6]="Varianza de fracc. de usuarios que esperaron: ";
                 System.out.println(globales[6]+sUE);
@@ -768,12 +768,12 @@ public class Ecobici {
                 globales[12]="Varianza del tiempo para dejar bicicleta: ";
                 System.out.println(globales[12]+sTED);
                 globales[12]+=","+sTED;
-                */
+                
                 TE=STE/reps;
     //            globales[13]=;
                 System.out.println("Tiempo de espera promedio: "+TE+" minutos");
     //            globales[13]+=","+TE;
-                /*
+                
                 sTE=STE2/(reps-1)-(STE*STE)/(reps*(reps-1));
                 globales[14]="Varianza del tiempo de espera: ";
                 System.out.println(globales[14]+sTE);
@@ -824,7 +824,7 @@ public class Ecobici {
                       }
                    }
                 }
-                */
+                
                 int buscador=0;
                 double resultado=alfa*TE+beta*FUE;
                 while(objetivo[buscador][1]!=0&&resultado>objetivo[buscador][1])
@@ -859,7 +859,7 @@ public class Ecobici {
                     }
                 }
                 bicicletas=biciaux;
-                String s="C:\\Users\\lablogistica\\Desktop\\ecobici\\Opt"+(it+1)+".csv";
+                String s="C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\ecobici\\Opt"+(it+1)+".csv";
                 FileWriter w=null;
                 try{
                     w = new FileWriter(s);
@@ -886,7 +886,7 @@ public class Ecobici {
                 }
             }
         }
-        String s="C:\\Users\\lablogistica\\Desktop\\ecobici\\Solución.csv";
+        String s="C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\ecobici\\Solución.csv";
         FileWriter w=null;
         try{
             w = new FileWriter(s);
