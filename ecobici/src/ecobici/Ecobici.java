@@ -708,7 +708,7 @@ public class Ecobici {
                        }
                     }
 
-                String csv2= "C:\\Users\\lablogistica\\Desktop\\ecobici\\Globales.csv";
+                String csv2= "C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\ecobici\\Globales.csv";
                 FileWriter w = null;
                 globales=new String[21];
                 System.out.println("\n");

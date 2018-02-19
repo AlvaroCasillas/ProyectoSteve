@@ -1,0 +1,23 @@
+Repetición:,1,2,3,4,5
+Usuarios servidos:,19222,19625,19388,19159,19336
+Usuarios que tomaron bicicleta:,10302,10454,10380,10287,10372
+Usuarios que esperaron tomar bicicleta:,818,725,813,848,794
+Siguen esperando tomar:,1024,937,1123,1249,1163
+Facción de usuarios que esperaron tomar bicicleta:,0.079402058,0.069351444,0.078323699,0.08243414,0.076552256
+Usuarios que dejaron bicicleta:,8920,9171,9008,8872,8964
+Usuarios que esperaron dejar bicicleta:,863,824,862,835,789
+Siguen esperando dejar:,409,378,398,378,410
+Resto�,973,905,974,1037,998
+,9%,9%,9%,10%,10%
+,,,,,
+Facción de usuarios que esperaron dejar bicicleta:,0.096748879,0.089848435,0.095692718,0.094116321,0.088018742
+Usuarios totales que esperaron:,1681,1549,1675,1683,1583
+Fracción de usuarios que esperaron:,0.087451878,0.078929936,0.086393646,0.087843833,0.081868018
+No esperaron:,17541,18076,17713,17476,17753
+Fracción de usuarios que no esperaron:,0.912548122,0.921070064,0.913606354,0.912156167,0.918131982
+Tiempo promedio de espera para tomar bicicleta:,5.448135148,4.280497307,5.235031339,5.257763107,5.399801376
+Tiempo promedio de espera para dejar bicicleta:,6.063470585,5.282647004,5.729788616,6.258816364,5.900373749
+Tiempo promedio de espera:,5.733682547,4.748813988,5.464904124,5.721323027,5.631862337
+Fracción promedio de tiempo con estaciones vacías:,0.099601911,0.080485131,0.097829544,0.102466479,0.095094127
+Fracción promedio de tiempo con estaciones llenas:,0.058236433,0.053225704,0.056402218,0.052480176,0.056611893
+Fracción promedio de tiempo con estaciones llenas o vacías:,0.157838344,0.133710835,0.154231761,0.154946654,0.151706021
