@@ -1,18 +1,18 @@
 Estadísticas globales:
-Fracc. promedio de usuarios que esperaron tomar bicicleta: ,27.588222320249137
-Varianza de fracc. de usuarios que esperaron tomar bicicleta: ,-766.9916700329987
-Fracc. promedio de usuarios que esperaron dejar bicicleta: ,38.922927952443096
-Varianza de fracc. de usuarios que esperaron dejar bicicleta: ,-1527.0889688801187
+Fracc. promedio de usuarios que esperaron tomar bicicleta: ,28.060101585018447
+Varianza de fracc. de usuarios que esperaron tomar bicicleta: ,-872.816859180676
+Fracc. promedio de usuarios que esperaron dejar bicicleta: ,38.78223083218263
+Varianza de fracc. de usuarios que esperaron dejar bicicleta: ,-1667.674751910398
 null
-Varianza de fracc. de usuarios que esperaron: ,7.960960678764329
-Fracc. promedio de usuarios que no esperaron: ,438.2360715852228
-Varianza de fracc. de usuarios que no esperaron: ,7.960960678764329
-Tiempo de espera promedio para tomar bicicleta: ,1697.851748764337
-Varianza del tiempo para tomar bicicleta: ,-2903726.245288683
-Tiempo de espera promedio para dejar bicicleta: ,2328.961846336723
-Varianza del tiempo para dejar bicicleta: ,-5467026.856715853
+Varianza de fracc. de usuarios que esperaron: ,8.825678462720155
+Fracc. promedio de usuarios que no esperaron: ,437.959003531718
+Varianza de fracc. de usuarios que no esperaron: ,8.825678462720155
+Tiempo de espera promedio para tomar bicicleta: ,1719.0165828873621
+Varianza del tiempo para tomar bicicleta: ,-3274300.487512342
+Tiempo de espera promedio para dejar bicicleta: ,2347.95485712319
+Varianza del tiempo para dejar bicicleta: ,-6112236.332405856
 null
-Varianza del tiempo de espera: ,8741.923018148947
+Varianza del tiempo de espera: ,9788.093722099442
 Fracc. promedio de tiempo con estaciones vacías: ,0.0
 Varianza de la fracc. de tiempo con estaciones vacías: ,0.0
 Fracc. promedio de tiempo con estaciones llenas: ,0.0
