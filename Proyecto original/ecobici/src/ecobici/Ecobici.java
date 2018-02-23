@@ -66,14 +66,14 @@ public class Ecobici {
     static double durper; // duración de cada periodo
     static LogNormalDistribution lognormal;
     static double mLogNormal,sdLogNormal,mNormal,sdNormal;
-//    static String[] resultados;
-//    static String[] globales;
+    static String[] resultados;
+    static String[] globales;
     static int[][] bicicletas; //población de soluciones
     static int pob, iter;//número de soluciones, iteraciones
     static double[][] objetivo; //número a minimizar
     static double mutación,alfa,beta;//probabilidad de mutación, pesos para obj.
     static Cruzamiento c;
-//    static String[][] res; //de cada estación
+    static String[][] res; //de cada estación
     
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
@@ -81,7 +81,7 @@ public class Ecobici {
         BufferedReader br = null;
         try {
             br =new BufferedReader(new FileReader
-            ("C:\\Users\\lablogistica\\Desktop\\ecobici\\DatosEntrada.csv"));
+            ("C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\Proyecto original\\ecobici\\DatosEntrada.csv"));
             String line = br.readLine(); //primera línea es de títulos
             line = br.readLine(); //segunda línea ya tiene los valores
             String [] fields = line.split(",");
@@ -109,7 +109,7 @@ public class Ecobici {
            }
         }
         bicicletas=new int[pob][nEst];
-        String S="C:\\Users\\lablogistica\\Desktop\\ecobici\\PoblaciónFinal.csv";
+        String S="C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\Proyecto original\\ecobici\\PoblaciónFinal.csv";
         try {
                 br =new BufferedReader(new FileReader(S));
                 for (int j = 0; j < nEst; j++) {
@@ -147,7 +147,7 @@ public class Ecobici {
         esperando = new ArrayQueue[nEst];
         arribos=new double[nEst][periodos];
         
-        /*
+        
         String csv= "C:\\Users\\lablogistica\\Desktop\\ecobici\\Resultados.csv";
         FileWriter writer = null;
         resultados=new String[21];
@@ -173,7 +173,7 @@ public class Ecobici {
         resultados[19]="Fracc. promedio de tiempo con estaciones llenas:";
         resultados[20]="Fracc. promedio de tiempo con estaciones "
                    + "llenas o vac?ias:";
-        /*
+        
         res=new String[nEst][11];
         for (int m = 0; m < nEst; m++) {
             res[m][0]="Usuarios que tomaron bicicleta: ";
@@ -188,7 +188,7 @@ public class Ecobici {
             res[m][9]="Tiempo que estuvo llena: ";
             res[m][10]="Balance: ";
         }
-        */
+        
         for (int it = 0; it < iter; it++) {
             System.out.println("\n");
             System.out.println("Iteración: "+it);
@@ -225,7 +225,7 @@ public class Ecobici {
                     bicis=0;
                 try {
                  br =new BufferedReader(new FileReader
-                ("C:\\Users\\lablogistica\\Desktop\\ecobici\\estaciones.csv"));
+                ("C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\Proyecto original\\ecobici\\estaciones.csv"));
                  String line = br.readLine();
                  while (null!=line) {
                     String [] fields = line.split(",");
@@ -265,7 +265,7 @@ public class Ecobici {
                     System.out.println("Error en creación de estaciones.");
                 try {
                  br =new BufferedReader(new FileReader
-                ("C:\\Users\\lablogistica\\Desktop\\ecobici\\tasasArribos.csv"));
+                ("C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\Proyecto original\\ecobici\\tasasArribos.csv"));
                  String line = br.readLine();
                  j=0;
                   while (null!=line) {
@@ -542,7 +542,7 @@ public class Ecobici {
                         servidos.dequeue();
 //                        System.out.println(((Usuario) servidos.dequeue()).toString());
 //                    System.out.println("\n");
-/*
+
                     for(int cont=0;cont<nEst;cont++){
                         while(!esperando[cont].isEmpty()){
                             usuario = (Usuario) esperando[cont].dequeue();
@@ -556,7 +556,7 @@ public class Ecobici {
                             + "y dejar: "+NumEsperando2);
                     NumEsperando=0;NumEsperando2=0;
                     System.out.println("\n");
-       */
+       
                     for (l = 0; l < nEst; l++) {
                           estaciones[l].calculaFinal(tnow);
         //                  estaciones[l].resultados();
@@ -671,7 +671,7 @@ public class Ecobici {
     //               STED2=STED2+(ted*ted);
                    STE=STE+te;
     //               STE2=STE2+(te*te);
-                   /*
+                   
                     for (int m = 0; m < n; m++) {
                         if(((Evento) calendario.dequeue()).tipo==1)
                             NumEsperando++;
@@ -684,9 +684,9 @@ public class Ecobici {
                         System.out.println("Se vació el calendario. Quedaron "+n
                             +" eventos: " +NumEsperando+" llegadas y "+NumEsperando2
                             +" arribos con bicicleta.");
-                    */
+                    
                }
-                /*
+                
                 try{
                     writer = new FileWriter(csv);
                         for (int m = 0; m < 21; m++)
@@ -708,7 +708,7 @@ public class Ecobici {
                        }
                     }
 
-                String csv2= "C:\\Users\\lablogistica\\Desktop\\ecobici\\Globales.csv";
+                String csv2= "C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\Proyecto original\\ecobici\\Globales.csv";
                 FileWriter w = null;
                 globales=new String[21];
                 System.out.println("\n");
@@ -734,12 +734,12 @@ public class Ecobici {
                         + "bicicleta: ";
                 System.out.println(globales[4]+sUED);
                 globales[4]+=","+sUED;
-                */
+                
                 FUE=SUE/reps;
     //            globales[5]=;
                 System.out.println("Fracc. promedio de usuarios que esperaron: "+FUE);
     //            globales[5]+=","+FUE;
-                /*
+                /
                 sUE=SUE2/(reps-1)-(SUE*SUE)/(reps*(reps-1));
                 globales[6]="Varianza de fracc. de usuarios que esperaron: ";
                 System.out.println(globales[6]+sUE);
@@ -768,12 +768,12 @@ public class Ecobici {
                 globales[12]="Varianza del tiempo para dejar bicicleta: ";
                 System.out.println(globales[12]+sTED);
                 globales[12]+=","+sTED;
-                */
+                
                 TE=STE/reps;
     //            globales[13]=;
                 System.out.println("Tiempo de espera promedio: "+TE+" minutos");
     //            globales[13]+=","+TE;
-                /*
+                
                 sTE=STE2/(reps-1)-(STE*STE)/(reps*(reps-1));
                 globales[14]="Varianza del tiempo de espera: ";
                 System.out.println(globales[14]+sTE);
@@ -824,7 +824,7 @@ public class Ecobici {
                       }
                    }
                 }
-                */
+                
                 int buscador=0;
                 double resultado=alfa*TE+beta*FUE;
                 while(objetivo[buscador][1]!=0&&resultado>objetivo[buscador][1])
@@ -859,7 +859,7 @@ public class Ecobici {
                     }
                 }
                 bicicletas=biciaux;
-                String s="C:\\Users\\lablogistica\\Desktop\\ecobici\\Opt"+(it+1)+".csv";
+                String s="C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\Proyecto original\\ecobici\\Opt"+(it+1)+".csv";
                 FileWriter w=null;
                 try{
                     w = new FileWriter(s);
@@ -886,7 +886,7 @@ public class Ecobici {
                 }
             }
         }
-        String s="C:\\Users\\lablogistica\\Desktop\\ecobici\\Solución.csv";
+        String s="C:\\Users\\lablogistica\\Documents\\Proyecto Steve\\ProyectoSteve\\Proyecto original\\ecobici\\Solución.csv";
         FileWriter w=null;
         try{
             w = new FileWriter(s);
